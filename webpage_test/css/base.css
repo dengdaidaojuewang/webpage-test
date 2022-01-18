@@ -1,0 +1,47 @@
+/* 标签初始化 */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+/* 列表初始化 */
+li,ol{
+    list-style: none;
+}
+/* 版心 */
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+/* a标签初始化 */
+a{
+    text-decoration: none;
+    color: black;
+}
+/* 按钮初始化 */
+input,textarea,button{
+    outline: 0;
+    /* border: 0; */
+}
+
+button{
+    border: 0;
+}
+/* 右浮动 */
+.right{
+    float: right;
+}
+/* 左浮动 */
+.left{
+    float: left;
+}
+/* 清除浮动 */
+.clearfloat{
+    clear: both;
+    /* height: 1px; */
+}
+/* 设置盒子隐藏 */
+.conceal{
+    display: none;
+}
