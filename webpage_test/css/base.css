@@ -19,6 +19,9 @@ a{
     text-decoration: none;
     color: black;
 }
+i{
+    font-style: normal;
+}
 /* 按钮初始化 */
 input,textarea,button{
     outline: 0;

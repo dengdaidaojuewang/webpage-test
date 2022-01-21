@@ -8,14 +8,863 @@
         content="吕倡,丢哥,大丢哥,IT兄弟会,PHP,Laravel,Vue,React,Python3,MacPro,Git,Redis,MySQL,pgSQL,项目开发,全栈,项目管理,IT项目管理">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/首页1.css">
     <title>网页测试</title>
     <style>
+        /* 蒙版搜索框样式 */
+        .Mask {
+            position: fixed;
+            top: 80px;
+            background: pink;
+            right: 0;
+            bottom: 100%;
+            left: 0;
+            height: 100%;
+            /* display: none; */
+            visibility: visible;
+            overflow: hidden;
+            transition: all .3s;
+            z-index: 10;
+        }
 
+        .Maskblock {
+            /* visibility: hidden; */
+            height: 0;
+        }
+
+        .Mask .Mask_search>input {
+            height: 40px;
+            width: 1200px;
+            margin-top: 40px;
+            padding: 8px 20px 8px 60px;
+        }
+
+        /* 中间部分 */
+        main {
+            background: #f5f7f9;
+
+        }
+
+        .schoolbag {
+            padding-top: 40px;
+            display: flex;
+        }
+
+
+
+        .book {
+            flex: 4;
+            background: #fff;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ear {
+            flex: 2;
+            /* background: blue; */
+        }
+
+        .booK_have {
+            position: relative;
+            border-bottom: 1px solid #000;
+            margin: 32px;
+            animation: chack 2s both;
+        }
+
+        .book_have_pencil_teacher {
+            font-size: 34px;
+            cursor: pointer;
+        }
+
+        @keyframes chack {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -100px, 0);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: none;
+
+            }
+        }
+
+        .book_have_I {
+            margin: 10px 0;
+        }
+
+        .book_have_I_eye {
+            font-size: 15px;
+            line-height: 1.5em;
+        }
+
+        .book_have_ruler {
+            margin-bottom: 20px;
+        }
+
+        .book_have_ruler::after {
+            display: block;
+            content: "";
+            width: 7px;
+            height: 7px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            background: #fff;
+            transform: translateY(-50%);
+            border: 1px solid #000;
+            border-radius: 50%;
+            box-shadow: #fff 0 0 0 5px;
+        }
+
+        .booK_have_ruler_my {
+            margin-left: 8px;
+            border-left: 1px solid #000;
+            padding-left: 8px;
+        }
+
+        .book_have_ruler_this_is {
+            background: #ebf5f3;
+            color: #cac38c;
+            margin: 0 5px;
+            padding: 0 5px;
+            line-height: 22px;
+        }
+
+        .book_have_rule_bird {
+            float: right;
+        }
+
+        .book_have_it {
+            height: 60px;
+            text-align: center;
+            color: #ccc;
+            margin: 32px;
+            position: relative;
+            /* background: pink; */
+
+        }
+
+        .book_have_it_monkey {
+            line-height: 60px;
+        }
+
+        .book_have_it_dog {
+            /* text-align: right; */
+            float: right;
+            width: 110px;
+            height: 30px;
+            border: 1px solid #000;
+            font-size: 16px;
+            color: #ccc;
+            background: #FFF;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+
+        }
+
+        .book_have_it_dog:hover {
+            background: blue;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .ear_tiger {
+            height: 450px;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        .ear_tiger_what {
+            height: 90px;
+            background: url(https://www.blog8090.com/content/images/2019/12/wallhaven-238002.jpg) center;
+        }
+
+        .ear_tiger_what_eight {
+            text-align: center;
+            margin-top: -50px;
+        }
+
+        .ear_tiger_what_eight_five {
+            display: inline-block;
+            width: 110px;
+            height: 110px;
+            background: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 184px;
+
+        }
+
+        .ear_tiger_what_eight_five_four {
+            width: 90px;
+            height: 90px;
+        }
+
+        .ear_tiger_face {
+            display: inline-block;
+            width: 100%;
+            height: 80px;
+            padding: 0 16px;
+            /* border: 1px solid #000; */
+
+
+        }
+
+        .ear_tiger_face>.ear_tiger_face_how {
+            height: 100%;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .ear_tiger_face_how_many {
+            display: inline-block;
+            width: 120px;
+            height: 30px;
+            color: #fff;
+            background: #009a61;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+
+        }
+
+        .ear_tiger_face_how_many::before {
+            content: "";
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            /* background: red; */
+            left: -30px;
+            border: 126px solid;
+            border-color: #009a61 #009a61 #009a61 transparent;
+            border-width: 15px;
+        }
+
+        .ear_tiger_face_how_many::after {
+            content: "";
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            /* background: red; */
+            right: -30px;
+            border: 126px solid;
+            border-color: #009a61 transparent #009a61 #009a61;
+            border-width: 15px;
+        }
+
+        .ear_tiger_nine {
+            display: inline-block;
+            width: 100%;
+            height: 60px;
+            padding: 0 16px;
+        }
+
+        .ear_tiger_nine_one {
+            height: 100%;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            /* line-height: 80px; */
+        }
+
+        .ear_tiger_nine_one_seven,
+        .ear_tiger_nine_one_six {
+            padding-top: 8px;
+        }
+
+        .ear_tiger_nine_one_six {
+            color: #ccc;
+        }
+
+        .ear_tiger_ten {
+            display: inline-block;
+            width: 100%;
+            height: 100px;
+            padding: 0 16px;
+            /* overflow: hidden; */
+        }
+
+
+        .ear_tiger_ten_there {
+            height: 100%;
+            border-bottom: 1px solid #ccc;
+
+
+        }
+
+        .ear_tiger_ten_there_three {
+            margin: auto 0;
+            /* text-align: center; */
+            /* line-height: 100px; */
+            padding-top: 30px;
+        }
+
+        .ear_tiger_ten_there_three_two {
+            display: inline-block;
+            width: 32%;
+            /* background: blue; */
+            height: 40px;
+            border-right: 1px solid #ccc;
+            /* background: red; */
+            text-align: center;
+
+        }
+
+        .ear_tiger_ten_there_three_two:last-child {
+            border: 0;
+        }
+
+        .ear_tiger_ten_there_three_two_are {
+            height: 20px;
+        }
+
+        .ear_tiger_blue {
+            margin-top: 20px;
+            width: 100%;
+            height: 50px;
+            /* background: red; */
+        }
+
+        .ear_tiger_blue_green {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .ear_banana {
+            height: 250px;
+            background: #FFF;
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        .ear_banana_like {
+            height: 40px;
+            border-bottom: 4px solid #ccc;
+            /* text-align: center; */
+            line-height: 40px;
+        }
+
+        .ear_banana_like_on {
+            display: inline-block;
+            border-bottom: 4px solid blue;
+            height: 40px;
+        }
+
+        .ear_banana_apple {
+            height: 190px;
+            margin: 10px 0;
+            /* background: red; */
+        }
+
+        .ear_banana_apple_do {
+            display: inline-block;
+            background: #ebf5f3;
+            font-size: 16px;
+            padding: 5px;
+            margin-bottom: 8px;
+            margin-right: 10px;
+            color: #017e66;
+        }
+
+        .ear_banana_apple_do:hover {
+            background: #017e66;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .ear_yes {
+            height: 100px;
+        }
+
+        .ear_yes_your {
+            height: 40px;
+        }
+
+        /* 页脚 */
+        .blackboard {
+            height: 120px;
+            /* margin-top: 20px; */
+            border-top: 4px solid #009a61;
+            background: #2c3f51;
+        }
+
+        .blackboard_chair {
+            display: flex;
+            justify-content: space-between;
+            /* line-height: 120px; */
+        }
+
+        .blackboard_chair_desk {
+            height: 60px;
+            /* display: inline-block; */
+            color: #fff;
+            line-height: 60px;
+            margin-top: 30px;
+        }
+
+        .blackboard_chair_in_the_desk {
+            color: #fff;
+
+        }
+
+        /* 定位 */
+        .under {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            opacity: 0;
+            bottom: 50px;
+            right: 50px;
+            transition: all 0.3;
+
+        }
+
+        .under_clear {
+            opacity: 1;
+            transition: all 0.3;
+        }
+
+        .under_where:hover {
+            background: #19a370;
+            cursor: pointer;
+            opacity: 1;
+
+        }
+
+        .under_where {
+            width: 70px;
+            height: 70px;
+            display: inline-block;
+            background: #ccc;
+            opacity: .5;
+            color: #fff;
+        }
     </style>
 </head>
 
-<body>
+<body class="bodys">
 
+    <div class="site_wrapper">
+        <!-- 引用首页1.css样式 -->
+        <header class="headererstart">
+            <div class="header_total w">
+                <div class="header_total_lcon">
+                    <a href="./index.html" class="header_total_lcon_a">吕倡</a>
+
+
+                </div>
+                <div class="header_total_bth">
+                    <ul class="header_total_bth_ul">
+                        <li class="header_total_bth_ul_li">
+                            <a href="javascript:;">首页</a>
+                        </li>
+                        <li class="header_total_bth_ul_li">
+                            <a href="javascript:;">系统</a>
+                        </li>
+                        <li class="header_total_bth_ul_li">
+                            <a href="javascript:;">服务端</a>
+                        </li>
+                        <li class="header_total_bth_ul_li">
+                            <a href="javascript:;">客户端</a>
+                        </li>
+                        <li class="header_total_bth_ul_li">
+                            <a href="javascript:;">速查表</a>
+                        </li>
+                        <li class="header_total_bth_ul_li">
+                            <a href="javascript:;">关于博主</a>
+                        </li>
+                        <li class="header_total_bth_ul_li">
+                            <a href="javascript:;" class="header_total_bth_ul_li_lasta">搜索</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </header>
+        <main>
+            <div class="schoolbag w">
+                <div class="book">
+                    <article class="booK_have">
+                        <header class="book_have_pencil">
+                            <h1 class="book_have_pencil_teacher"><a href="javascript:;"
+                                    class="book_have_pencil_teacher_schoolbag"></a>申请 SSL 证书 --Nginx 配置Https 最佳实践
+                            </h1>
+                        </header>
+                        <section class="book_have_I">
+                            <p class="book_have_I_eye">前沿 ： 谷歌从 2017 年起，Chrome 浏览器将也会把采用 HTTP 协议的网站标记为「不安全」网站；苹果从
+                                2017 年 iOS App 将强制使用
+                                HTTPS；在国内热火朝天的小程序也要求必须使用 HTTPS 请求。同时，火狐等主流浏览器同样的响应了此号召。 ... </p>
+                        </section>
+                        <footer class="book_have_ruler">
+                            <span class="book_have_ruler_mouth">吕倡</span>
+                            <span class="booK_have_ruler_my book_have_ruler_nose">MONTHS AGO</span>
+                            <span class="booK_have_ruler_my booK_have_ruler_this">
+                                <a href="javascript:;" class="book_have_ruler_this_is">服务端</a>
+                                ，
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发笔记</a>
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发环境</a>
+                            </span>
+                            <span class="book_have_rule_bird">
+                                <a href="javascript:;" class="booK_have_ruler_this_bird_cat">阅读全文&gt;&gt;</a>
+                            </span>
+                        </footer>
+                    </article>
+                    <article class="booK_have">
+                        <header class="book_have_pencil">
+                            <h1 class="book_have_pencil_teacher"><a href="javascript:;"
+                                    class="book_have_pencil_teacher_schoolbag"></a>申请 SSL 证书 --Nginx 配置Https 最佳实践
+                            </h1>
+                        </header>
+                        <section class="book_have_I">
+                            <p class="book_have_I_eye">前沿 ： 谷歌从 2017 年起，Chrome 浏览器将也会把采用 HTTP 协议的网站标记为「不安全」网站；苹果从
+                                2017 年 iOS App 将强制使用
+                                HTTPS；在国内热火朝天的小程序也要求必须使用 HTTPS 请求。同时，火狐等主流浏览器同样的响应了此号召。 ... </p>
+                        </section>
+                        <footer class="book_have_ruler">
+                            <span class="book_have_ruler_mouth">吕倡</span>
+                            <span class="booK_have_ruler_my book_have_ruler_nose">MONTHS AGO</span>
+                            <span class="booK_have_ruler_my booK_have_ruler_this">
+                                <a href="javascript:;" class="book_have_ruler_this_is">服务端</a>
+                                ，
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发笔记</a>
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发环境</a>
+                            </span>
+                            <span class="book_have_rule_bird">
+                                <a href="javascript:;" class="booK_have_ruler_this_bird_cat">阅读全文&gt;&gt;</a>
+                            </span>
+                        </footer>
+                    </article>
+                    <article class="booK_have">
+                        <header class="book_have_pencil">
+                            <h1 class="book_have_pencil_teacher"><a href="javascript:;"
+                                    class="book_have_pencil_teacher_schoolbag"></a>申请 SSL 证书 --Nginx 配置Https 最佳实践
+                            </h1>
+                        </header>
+                        <section class="book_have_I">
+                            <p class="book_have_I_eye">前沿 ： 谷歌从 2017 年起，Chrome 浏览器将也会把采用 HTTP 协议的网站标记为「不安全」网站；苹果从
+                                2017 年 iOS App 将强制使用
+                                HTTPS；在国内热火朝天的小程序也要求必须使用 HTTPS 请求。同时，火狐等主流浏览器同样的响应了此号召。 ... </p>
+                        </section>
+                        <footer class="book_have_ruler">
+                            <span class="book_have_ruler_mouth">吕倡</span>
+                            <span class="booK_have_ruler_my book_have_ruler_nose">MONTHS AGO</span>
+                            <span class="booK_have_ruler_my booK_have_ruler_this">
+                                <a href="javascript:;" class="book_have_ruler_this_is">服务端</a>
+                                ，
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发笔记</a>
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发环境</a>
+                            </span>
+                            <span class="book_have_rule_bird">
+                                <a href="javascript:;" class="booK_have_ruler_this_bird_cat">阅读全文&gt;&gt;</a>
+                            </span>
+                        </footer>
+                    </article>
+                    <article class="booK_have">
+                        <header class="book_have_pencil">
+                            <h1 class="book_have_pencil_teacher"><a href="javascript:;"
+                                    class="book_have_pencil_teacher_schoolbag"></a>申请 SSL 证书 --Nginx 配置Https 最佳实践
+                            </h1>
+                        </header>
+                        <section class="book_have_I">
+                            <p class="book_have_I_eye">前沿 ： 谷歌从 2017 年起，Chrome 浏览器将也会把采用 HTTP 协议的网站标记为「不安全」网站；苹果从
+                                2017 年 iOS App 将强制使用
+                                HTTPS；在国内热火朝天的小程序也要求必须使用 HTTPS 请求。同时，火狐等主流浏览器同样的响应了此号召。 ... </p>
+                        </section>
+                        <footer class="book_have_ruler">
+                            <span class="book_have_ruler_mouth">吕倡</span>
+                            <span class="booK_have_ruler_my book_have_ruler_nose">MONTHS AGO</span>
+                            <span class="booK_have_ruler_my booK_have_ruler_this">
+                                <a href="javascript:;" class="book_have_ruler_this_is">服务端</a>
+                                ，
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发笔记</a>
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发环境</a>
+                            </span>
+                            <span class="book_have_rule_bird">
+                                <a href="javascript:;" class="booK_have_ruler_this_bird_cat">阅读全文&gt;&gt;</a>
+                            </span>
+                        </footer>
+                    </article>
+                    <article class="booK_have">
+                        <header class="book_have_pencil">
+                            <h1 class="book_have_pencil_teacher"><a href="javascript:;"
+                                    class="book_have_pencil_teacher_schoolbag"></a>申请 SSL 证书 --Nginx 配置Https 最佳实践
+                            </h1>
+                        </header>
+                        <section class="book_have_I">
+                            <p class="book_have_I_eye">前沿 ： 谷歌从 2017 年起，Chrome 浏览器将也会把采用 HTTP 协议的网站标记为「不安全」网站；苹果从
+                                2017 年 iOS App 将强制使用
+                                HTTPS；在国内热火朝天的小程序也要求必须使用 HTTPS 请求。同时，火狐等主流浏览器同样的响应了此号召。 ... </p>
+                        </section>
+                        <footer class="book_have_ruler">
+                            <span class="book_have_ruler_mouth">吕倡</span>
+                            <span class="booK_have_ruler_my book_have_ruler_nose">MONTHS AGO</span>
+                            <span class="booK_have_ruler_my booK_have_ruler_this">
+                                <a href="javascript:;" class="book_have_ruler_this_is">服务端</a>
+                                ，
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发笔记</a>
+                                <a href="javascript:;" class="book_have_ruler_this_is">开发环境</a>
+                            </span>
+                            <span class="book_have_rule_bird">
+                                <a href="javascript:;" class="booK_have_ruler_this_bird_cat">阅读全文&gt;&gt;</a>
+                            </span>
+                        </footer>
+                    </article>
+                    <footer class="book_have_it">
+                        <span class="book_have_it_monkey">
+                            Page&nbsp;1&nbsp;of&nbsp;12
+                        </span>
+                        <button class="book_have_it_dog">
+                            下一页&gt;
+                        </button>
+                    </footer>
+                </div>
+                <div class="ear">
+                    <div class="ear_tiger">
+                        <div class="ear_tiger_what">
+                        </div>
+                        <div class="ear_tiger_what_eight">
+                            <a href="javascript:;" class="ear_tiger_what_eight_five">
+                                <img src="https://www.blog8090.com/content/images/2019/12/users.png" alt=""
+                                    class="ear_tiger_what_eight_five_four">
+                            </a>
+                        </div>
+                        <div class="ear_tiger_face">
+                            <div class="ear_tiger_face_how">
+                                <div class="ear_tiger_face_how_many">
+                                    吕倡
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ear_tiger_nine">
+                            <div class="ear_tiger_nine_one">
+                                <h1 class="ear_tiger_nine_one_seven">丢哥技术栈</h1>
+                                <p class="ear_tiger_nine_one_six">大型在线翻译器</p>
+                            </div>
+                        </div>
+                        <div class="ear_tiger_ten">
+                            <div class="ear_tiger_ten_there">
+                                <ul class="ear_tiger_ten_there_three">
+                                    <li class="ear_tiger_ten_there_three_two">
+                                        <div class="ear_tiger_ten_there_three_two_are">
+                                            59
+                                        </div>
+                                        <div class="ear_tiger_ten_there_three_two_black">
+                                            文章
+                                        </div>
+                                    </li>
+                                    <li class="ear_tiger_ten_there_three_two">
+                                        <div class="ear_tiger_ten_there_three_two_are">
+                                            59
+                                        </div>
+                                        <div class="ear_tiger_ten_there_three_two_black">
+                                            文章
+                                        </div>
+                                    </li>
+                                    <li class="ear_tiger_ten_there_three_two">
+                                        <div class="ear_tiger_ten_there_three_two_are">
+                                            59
+                                        </div>
+                                        <div class="ear_tiger_ten_there_three_two_black">
+                                            文章
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ear_tiger_blue">
+                            <ul class="ear_tiger_blue_green">
+                                <li class="ear_tiger_blue_green_red">
+                                    <a href="javascript:;" class="ear_tiger_blue_green_red_yellow">
+                                        <i class="ear_tiger_blue_green_red_yellow_colour">
+                                            图标
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="ear_tiger_blue_green_red">
+                                    <a href="javascript:;" class="ear_tiger_blue_green_red_yellow">
+                                        <i class="ear_tiger_blue_green_red_yellow_colour">
+                                            图标
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="ear_tiger_blue_green_red">
+                                    <a href="javascript:;" class="ear_tiger_blue_green_red_yellow">
+                                        <i class="ear_tiger_blue_green_red_yellow_colour">
+                                            图标
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="ear_tiger_blue_green_red">
+                                    <a href="javascript:;" class="ear_tiger_blue_green_red_yellow">
+                                        <i class="ear_tiger_blue_green_red_yellow_colour">
+                                            图标
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="ear_tiger_blue_green_red">
+                                    <a href="javascript:;" class="ear_tiger_blue_green_red_yellow">
+                                        <i class="ear_tiger_blue_green_red_yellow_colour">
+                                            图标
+                                        </i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ear_banana">
+                        <div class="ear_banana_like">
+                            <div class="ear_banana_like_on">
+                                <i class="ear_banana_like_no_orange"></i>
+                                <span class="ear_banana_like_on_pear">标签云</span>
+                            </div>
+                        </div>
+                        <div class="ear_banana_apple">
+                            <span class="ear_banana_apple_do">
+                                服务器(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                开发笔记(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                php(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                laravel(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                工具(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                开发环境(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                速查表(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                数据库(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                客户端(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                Mysql(6)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                python(6)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                管理工作(6)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                blog(6)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                git(6)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                关于我(6)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="ear_banana ear_yes">
+                        <div class="ear_banana_like">
+                            <div class="ear_banana_like_on">
+                                <i class="ear_banana_like_no_orange"></i>
+                                <span class="ear_banana_like_on_pear">友情连接</span>
+                            </div>
+                        </div>
+                        <div class="ear_banana_apple ear_yes_your">
+                            <span class="ear_banana_apple_do">
+                                服务器(46)
+                            </span>
+                            <span class="ear_banana_apple_do">
+                                开发笔记(46)
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="blackboard">
+            <div class="blackboard_chair w">
+                <div class="blackboard_chair_in blackboard_chair_desk">
+                    <section class="blackboard_chair_in_the">备案号:<a href=""
+                            class="blackboard_chair_in_the_desk">160460025号-2
+                        </a>
+                    </section>
+
+
+                </div>
+                <div class="blackboard_chair_on blackboard_chair_desk">
+                    <section class="blackboard_chair_in_the">本站点为个人技术积累建设本站的目的是为了广大的开发作者提供方便的资料查询的<a href=""
+                            class="blackboard_chair_in_the_desk">固定站点
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- 蒙版搜索框 -->
+    <div class="Mask Maskblock">
+        <div class="Mask_search w">
+            <input type="text" placeholder="搜索...">
+        </div>
+
+    </div>
+    <!-- 定位 -->
+    <div class="under">
+        <span class="under_where">
+            返回首页
+        </span>
+    </div>
+    <script>
+        var header_total_bth_ul_li_lasta = document.querySelector(".header_total_bth_ul_li_lasta")
+        var Mask = document.querySelector(".Mask")
+        var bodys = document.querySelector(".bodys")
+        var num = 0
+        header_total_bth_ul_li_lasta.addEventListener("click", function () {
+            num++
+            if (num == 1) {
+                Mask.classList.remove("Maskblock")
+                header_total_bth_ul_li_lasta.innerHTML = "x"
+                bodys.classList.add("fixeds")
+            }
+            else {
+                header_total_bth_ul_li_lasta.innerHTML = "搜索"
+                Mask.classList.add("Maskblock")
+                bodys.classList.remove("fixeds")
+                num = 0
+            }
+        })
+
+        var under = document.querySelector(".under")
+        under.addEventListener("click", function () {
+            document.documentElement.scrollTop = 0;
+        })
+
+        document.addEventListener("scroll", function () {
+            if (window.pageYOffset >= 200) {
+                under.classList.add("under_clear")
+
+            } else {
+                under.classList.remove("under_clear")
+
+
+
+            }
+
+        })
+    </script>
 </body>
 
 </html>
